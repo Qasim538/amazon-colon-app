@@ -29,7 +29,3 @@ export function addToCart(productId) {
     }
   }
 
-
-  function removeFromCart(productId) {
-    
-  }
