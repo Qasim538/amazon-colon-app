@@ -101,5 +101,6 @@ document.querySelectorAll('.js-del-link').forEach((link) => {
     link.addEventListener("click", () => {
        const productId = link.dataset.productId
        removeFromCart(productId)
+       console.log(cart);
     })
 })
