@@ -1,7 +1,16 @@
 import { cart, removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
-
 import { formateCurrency } from "./utils/money.js";
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+// get delivery day 7 days
+dayjs();
+const today = (dayjs());
+const deliveryDate = today.add(7, 'days')
+console.log(deliveryDate.format('dddd, MMMM D, YYYY'))
+
+
 
 let cartSummaryHTML = "";
 
