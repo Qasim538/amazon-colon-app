@@ -27,6 +27,7 @@ products.forEach((product) => {
 });
 
 cartSummaryHTML +=
+
 `
 <div class="cart-item-container 
 js-cart-item-container-${matchingProduct.id}">
@@ -71,7 +72,7 @@ js-cart-item-container-${matchingProduct.id}">
 `
 })
 
-function deliveryOptionHTML() {
+function deliveryOptionHTML(matchingProduct) {
     
     let html = '';
 
@@ -87,6 +88,7 @@ function deliveryOptionHTML() {
         );
 
         const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formateCurrency(deliveryOption.priceCents)} -`;
+
         html += 
 
         `
@@ -109,8 +111,8 @@ function deliveryOptionHTML() {
     return html;
 }
 
-document.querySelector('.order-summary').innerHTML = cartSummaryHTML;
-
+document.querySelector('.js-order-summary')
+.innerHTML = cartSummaryHTML;
 
 document.querySelectorAll('.js-del-link').forEach((link) => {
     link.addEventListener("click", () => {
